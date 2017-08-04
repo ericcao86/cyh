@@ -22,7 +22,7 @@ public class LoginController {
 
     @GetMapping("/gettabledata")
     @ResponseBody
-    public Map<String,Object> getTableData(){
+    public Map<String,Object> getTableData(String username){
         List<User> users = new ArrayList<>();
         Map<String,Object> dataMap = new HashMap<>();
         User u = new User();
@@ -33,6 +33,7 @@ public class LoginController {
         users.add(u);
         dataMap.put("count",users.size());
         dataMap.put("list",users);
+        System.out.println(username);
         return dataMap;
     }
 
